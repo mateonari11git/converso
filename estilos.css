@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #111;
+}
+
+/* Barra de navegación */
+.navbar {
+  background: white;
+  border-bottom: 1px solid #ddd;
+  padding: 25px 40px 15px;
+}
+
+/* Logo centrado */
+.logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo h1 {
+  font-size: 42px;
+  letter-spacing: 4px;
+}
+
+/* Categorías debajo del logo */
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #111;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.menu a:hover {
+  border-bottom: 2px solid #111;
+}
+
+/* Estructura principal */
+.contenedor-principal {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 30px;
+  padding: 40px;
+}
+
+/* Sección grande izquierda */
+.contenido-general {
+  background: white;
+  padding: 30px;
+  min-height: 600px;
+  border: 1px solid #ddd;
+}
+
+/* Columna derecha */
+.columna-info {
+  background: white;
+  padding: 25px;
+  min-height: 600px;
+  border: 1px solid #ddd;
+}
+
+.contenido-general h2,
+.columna-info h2 {
+  margin-bottom: 20px;
+}
+
+.bloque-contenido {
+  margin-top: 30px;
+  padding: 20px;
+  border-top: 1px solid #ccc;
+}
+
+/* Versión para celular */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .contenedor-principal {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+}
