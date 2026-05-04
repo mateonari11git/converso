@@ -10,41 +10,62 @@ body {
   color: #111;
 }
 
-/* Barra de navegación */
 .navbar {
-  background: white;
-  border-bottom: 1px solid #ddd;
-  padding: 25px 40px 15px;
+  background: #06143A;
+  border-bottom: none;
+  padding: 18px 40px 14px;
 }
 
-/* Logo centrado */
 .logo {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
-.logo h1 {
-  font-size: 42px;
-  letter-spacing: 4px;
+.logo img {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
-/* Categorías debajo del logo */
 .menu {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  align-items: center;
+  gap: 42px;
 }
 
 .menu a {
   text-decoration: none;
-  color: #111;
-  font-size: 16px;
+  color: #F6DE88;
+  font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .menu a:hover {
-  border-bottom: 2px solid #111;
+  border-bottom: 2px solid #F6DE88;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 20px 14px;
+  }
+
+  .logo img {
+    width: 240px;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .contenedor-principal {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
 }
 
 /* Estructura principal */
