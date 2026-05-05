@@ -256,9 +256,9 @@ body {
     padding: 16px 20px 14px;
   }
 
-  .logo-grande img {
-    width: 240px;
-  }
+  #navbar .logo-grande img {
+  width: 180px;
+    }
 
   .navbar.scrolled {
     padding: 8px 20px;
@@ -310,4 +310,112 @@ body {
 
 body {
   padding-top: 150px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: #F6DE88;
+  margin: 6px 0;
+}
+
+@media (max-width: 768px) {
+  #navbar {
+    position: fixed;
+  }
+
+  #navbar .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 22px;
+    top: 28px;
+  }
+
+  #navbar .menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 18px;
+  }
+
+  #navbar .menu.activo {
+    display: flex;
+  }
+
+  #navbar.scrolled .menu-toggle {
+    top: 18px;
+  }
+
+  #navbar.scrolled .menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: #06143A;
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  #navbar.scrolled .menu.activo {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 16px !important;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #06143A;
+    padding: 20px 0;
+
+    margin-top: 0 !important;
+  }
+
+  #navbar.scrolled .menu.activo a {
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #navbar {
+    min-height: 70px;
+    padding: 10px 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #navbar .logo-grande {
+    margin-bottom: 0;
+  }
+
+  #navbar .logo-grande img {
+    width: 155px;
+  }
+
+  #navbar .menu-toggle {
+    position: static;
+    display: block;
+  }
+
+  #navbar .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #06143A;
+    margin-top: 0 !important;
+    padding: 20px 0;
+  }
 }

@@ -88,3 +88,16 @@ function iniciarNavbar() {
   revisarScroll();
   window.addEventListener("scroll", revisarScroll);
 }
+
+function iniciarMenuMovil() {
+  const boton = document.getElementById("menuToggle");
+  const menu = document.getElementById("menuNavbar");
+
+  if (!boton || !menu) {
+    return;
+  }
+
+  boton.addEventListener("click", () => {
+    menu.classList.toggle("activo");
+  });
+}

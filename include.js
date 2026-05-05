@@ -19,6 +19,12 @@ async function cargarComponentes() {
   if (typeof iniciarNavbar === "function") {
   iniciarNavbar();
  }
+
+ if (typeof iniciarMenuMovil === "function") {
+  iniciarMenuMovil();
+}
+
 }
 
 document.addEventListener("DOMContentLoaded", cargarComponentes);
+
