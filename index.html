@@ -8,49 +8,14 @@
 </head>
 <body>
 
-  <header class="navbar">
-    <div class="logo">
-      <a href="index.html">
-        <img src="imagenes/logo-converso-recortado.png" alt="Logo Converso">
-      </a>
-    </div>
-
-    <nav class="menu">
-      <a href="#">El Conversador</a>
-      <a href="#">Eventos</a>
-      <a href="#">Multimedia</a>
-      <a href="#">Nosotros</a>
-      <a href="#">Contacto</a>
-    </nav>
-  </header>
+  <div data-include="componentes/navbar.html"></div>
 
   <main class="contenedor-principal">
-
-    <section class="contenido-general">
-      <h2>Contenido principal</h2>
-      <p>
-        Aquí irá el contenido general de la revista: artículos destacados,
-        imágenes, publicaciones recientes, entrevistas o cualquier otra sección.
-      </p>
-
-      <article class="bloque-contenido">
-        <h3>Título de ejemplo</h3>
-        <p>
-          Este es un espacio de prueba para comenzar a organizar el contenido
-          principal de la página.
-        </p>
-      </article>
-    </section>
-
-    <aside class="columna-info">
-      <h2>Información</h2>
-      <p>
-        Aquí puedes poner información secundaria, anuncios, enlaces rápidos,
-        notas editoriales o una breve descripción de la revista.
-      </p>
-    </aside>
-
+    <div data-include="componentes/carrusel-principal.html"></div>
+    <div data-include="componentes/columna-info.html"></div>
   </main>
 
+  <script src="script.js"></script>
+  <script src="include.js"></script>
 </body>
 </html>

@@ -1,0 +1,44 @@
+[
+  {
+    "titulo": "Historia destacada de la revista",
+    "descripcion": "Una introducción breve a la historia principal que ocupa más espacio dentro del carrusel.",
+    "imagen": "img/imagen-1.jpg",
+    "link": "#",
+    "destacada": true
+  },
+  {
+    "titulo": "Título del artículo",
+    "descripcion": "Descripción corta del contenido de esta publicación.",
+    "imagen": "img/imagen-2.jpg",
+    "link": "#",
+    "destacada": false
+  },
+  {
+    "titulo": "Otro artículo popular",
+    "descripcion": "Una breve descripción para invitar al lector a continuar.",
+    "imagen": "img/imagen-3.jpg",
+    "link": "#",
+    "destacada": true
+  },
+  {
+    "titulo": "Crónica destacada",
+    "descripcion": "Texto corto de presentación para esta historia.",
+    "imagen": "img/imagen-4.jpg",
+    "link": "#",
+    "destacada": false
+  },
+  {
+    "titulo": "Nueva mirada cultural",
+    "descripcion": "Un vistazo breve a una nueva historia de la revista.",
+    "imagen": "img/imagen-5.jpg",
+    "link": "#",
+    "destacada": true
+  },
+  {
+    "titulo": "Nota editorial",
+    "descripcion": "Una reflexión corta sobre temas actuales.",
+    "imagen": "img/imagen-6.jpg",
+    "link": "#",
+    "destacada": false
+  }
+]
