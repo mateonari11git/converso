@@ -101,3 +101,53 @@ function iniciarMenuMovil() {
     menu.classList.toggle("activo");
   });
 }
+
+
+function cargarArticulo() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  if (!id) return;
+
+  fetch("articulo-completo.json")
+    .then(res => res.json())
+    .then(data => {
+      const articulo = data.find(a => a.id === id);
+
+      if (!articulo) return;
+
+      document.getElementById("articuloTitulo").textContent = articulo.titulo;
+      document.getElementById("articuloSubtitulo").textContent = articulo.subtitulo;
+      document.getElementById("articuloAutor").textContent = articulo.autor;
+      document.getElementById("articuloFecha").textContent = articulo.fecha;
+      document.getElementById("articuloImagen").src = articulo.imagen;
+
+      const cuerpo = document.getElementById("articuloCuerpo");
+      cuerpo.innerHTML = "";
+
+      articulo.cuerpo.forEach(parrafo => {
+        const p = document.createElement("p");
+        p.textContent = parrafo;
+        cuerpo.appendChild(p);
+      });
+    });
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (typeof cargarArticulo === "function") {
+    cargarArticulo();
+  }
+});
+
+function iniciarDropdownMovil() {
+  const dropdown = document.querySelector(".dropdown");
+  const boton = document.querySelector(".dropdown-toggle");
+  const menu = document.querySelector(".dropdown-menu");
+
+  if (!dropdown || !boton || !menu) return;
+
+  boton.addEventListener("click", () => {
+    menu.classList.toggle("activo");
+  });
+}

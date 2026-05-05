@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artículo | Converso</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <div data-include="componentes/navbar.html"></div>
+
+  <main class="pagina-articulo">
+    <article class="articulo-contenedor">
+
+      <header class="articulo-header">
+        
+        <h1 id="articuloTitulo">Título del artículo</h1>
+
+        <p id="articuloSubtitulo" class="articulo-subtitulo">
+          Subtítulo o descripción breve del artículo.
+        </p>
+
+        <div class="articulo-meta">
+          <span id="articuloAutor">Autor</span>
+          <span>·</span>
+          <span id="articuloFecha">Fecha</span>
+        </div>
+      </header>
+
+      <figure class="articulo-imagen-principal">
+        <img id="articuloImagen" src="imagenes/imagen-1.jpg" alt="Imagen principal del artículo">
+      </figure>
+
+      <section id="articuloCuerpo" class="articulo-cuerpo">
+        <p>
+          Aquí irá el texto principal del artículo. Luego este contenido se cargará
+          automáticamente desde un archivo JSON.
+        </p>
+      </section>
+
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="include.js"></script>
+</body>
+</html>

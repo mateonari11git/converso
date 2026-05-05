@@ -24,6 +24,10 @@ async function cargarComponentes() {
   iniciarMenuMovil();
 }
 
+if (typeof iniciarDropdownMovil === "function") {
+  iniciarDropdownMovil();
+}
+
 }
 
 document.addEventListener("DOMContentLoaded", cargarComponentes);
