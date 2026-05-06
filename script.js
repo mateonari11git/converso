@@ -151,3 +151,63 @@ function iniciarDropdownMovil() {
     menu.classList.toggle("activo");
   });
 }
+
+function cargarCategoria() {
+  const params = new URLSearchParams(window.location.search);
+  const categoriaId = params.get("id");
+
+  if (!categoriaId) return;
+
+  const tituloCategoria = document.getElementById("categoriaTitulo");
+  const descripcionCategoria = document.getElementById("categoriaDescripcion");
+  const contenedor = document.getElementById("categoriaContenido");
+
+  if (!tituloCategoria || !descripcionCategoria || !contenedor) return;
+
+  Promise.all([
+    fetch("categorias.json").then(res => res.json()),
+    fetch("articulos.json").then(res => res.json())
+  ])
+    .then(([categorias, articulos]) => {
+      const categoria = categorias.find(cat => cat.id === categoriaId);
+
+      if (!categoria) {
+        tituloCategoria.textContent = "Categoría no encontrada";
+        descripcionCategoria.textContent = "La sección solicitada no existe.";
+        return;
+      }
+
+      tituloCategoria.textContent = categoria.titulo;
+      descripcionCategoria.textContent = categoria.descripcion;
+
+      const articulosFiltrados = articulos.filter(
+        articulo => articulo.categoria === categoriaId
+      );
+
+      contenedor.innerHTML = "";
+
+      if (articulosFiltrados.length === 0) {
+        contenedor.innerHTML = "<p>No hay artículos disponibles en esta sección todavía.</p>";
+        return;
+      }
+
+      articulosFiltrados.forEach(articulo => {
+        const card = document.createElement("article");
+        card.className = "card-articulo";
+
+        card.innerHTML = `
+          <img src="${articulo.imagen}" alt="${articulo.titulo}">
+          <div class="card-texto">
+            <h3>${articulo.titulo}</h3>
+            <p>${articulo.descripcion}</p>
+            <a href="${articulo.link}" class="boton-leer">Seguir Leyendo</a>
+          </div>
+        `;
+
+        contenedor.appendChild(card);
+      });
+    })
+    .catch(error => {
+      console.error("Error cargando la categoría:", error);
+    });
+}

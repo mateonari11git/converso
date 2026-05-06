@@ -1,0 +1,27 @@
+[
+  {
+    "id": "ediciones-completas",
+    "titulo": "Ediciones Completas",
+    "descripcion": "Recopilaciones completas de contenidos publicados, organizadas por temática o periodo."
+  },
+  {
+    "id": "versiones",
+    "titulo": "Versiones",
+    "descripcion": "Ensayos, columnas y reflexiones que interpretan la realidad desde distintas perspectivas."
+  },
+  {
+    "id": "vistazos",
+    "titulo": "Vistazos",
+    "descripcion": "Lecturas rápidas y miradas breves sobre temas actuales, culturales y sociales."
+  },
+  {
+    "id": "variedades",
+    "titulo": "Variedades",
+    "descripcion": "Contenido diverso que explora distintas formas de narrativa y expresión."
+  },
+  {
+    "id": "vulgaridades",
+    "titulo": "Vulgaridades",
+    "descripcion": "Textos irreverentes, provocadores y sin filtro sobre la realidad contemporánea."
+  }
+]

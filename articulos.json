@@ -4,7 +4,8 @@
     "descripcion": "Cometer errores de ortografía me avergüenza más de lo que considero razonable...",
     "imagen": "imagenes/imagen herrores ortografia.jpg",
     "link": "articulo.html?id=herrores-de-ortografia-simon-arango",
-    "destacada": true
+    "destacada": true,
+    "categoria": "versiones"
   },
   {
     "titulo": "Título del artículo",

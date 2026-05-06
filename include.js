@@ -30,5 +30,10 @@ if (typeof iniciarDropdownMovil === "function") {
 
 }
 
+if (typeof cargarCategoria === "function") {
+  cargarCategoria();
+}
+
+
 document.addEventListener("DOMContentLoaded", cargarComponentes);
 
