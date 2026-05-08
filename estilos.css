@@ -775,3 +775,305 @@ body {
   transform: scale(1.05);
   transition: 0.3s;
 }
+
+/* CONTACTO */
+.pagina-contacto {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+.contacto-contenedor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: stretch;
+}
+
+.contacto-formulario h1 {
+  font-size: 56px;
+  color: #06143A;
+  margin-bottom: 16px;
+}
+
+.contacto-formulario p {
+  font-size: 20px;
+  color: #444;
+  margin-bottom: 28px;
+}
+
+.contacto-formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contacto-formulario input,
+.contacto-formulario textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #ddd;
+  font-size: 18px;
+  outline: none;
+}
+
+.contacto-formulario input:focus,
+.contacto-formulario textarea:focus {
+  border-color: #06143A;
+}
+
+.contacto-formulario button {
+  background: #06143A;
+  color: #F6DE88;
+  border: none;
+  padding: 14px 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.contacto-formulario button:hover {
+  background: #0B1F55;
+}
+
+.contacto-imagen {
+  height: 100%;
+}
+
+.contacto-imagen img {
+  width: 100%;
+  height: 100%;
+  max-height: 520px;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .pagina-contacto {
+    padding: 40px 20px;
+  }
+
+  .contacto-contenedor {
+    grid-template-columns: 1fr;
+  }
+
+  .contacto-formulario h1 {
+    font-size: 40px;
+  }
+}
+
+/* EDICIÓN FLIPBOOK */
+.pagina-edicion {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.edicion-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.edicion-header h1 {
+  color: #06143A;
+  font-size: 52px;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.edicion-header p {
+  color: #444;
+  font-size: 20px;
+}
+
+.flipbook-zona {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Botón pantalla completa */
+.btn-pantalla-completa {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 30;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(6, 20, 58, 0.35);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-pantalla-completa:hover {
+  background: rgba(6, 20, 58, 0.65);
+  color: #ffffff;
+}
+
+/* Contenedor principal */
+.flipbook-wrapper {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 160px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: auto;
+  background: #f3f3f3;
+}
+
+#flipbook {
+  width: 1000px;
+  height: 1414px;
+  image-rendering: auto;
+  transform-origin: center center;
+}
+
+/* Flechas transparentes encima del libro */
+.flecha-flip {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 25;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(6, 20, 58, 0.18);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 26px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.flecha-flip:hover {
+  background: rgba(6, 20, 58, 0.55);
+  color: #ffffff;
+}
+
+.flecha-flip-izquierda {
+  left: 18px;
+}
+
+.flecha-flip-derecha {
+  right: 18px;
+}
+
+.contador-flipbook {
+  margin-top: 14px;
+  color: #06143A;
+  font-size: 15px;
+}
+
+/* Pantalla completa */
+.flipbook-wrapper:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  background: #f7f7f7;
+}
+
+.flipbook-wrapper:fullscreen #flipbook {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .pagina-edicion {
+    padding: 30px 10px;
+  }
+
+  .edicion-header h1 {
+    font-size: 36px;
+  }
+
+  .flipbook-wrapper {
+    width: 100%;
+    height: 72vh;
+  }
+
+  .btn-pantalla-completa {
+    align-self: center;
+    margin-right: 0;
+  }
+
+    .flecha-flip {
+    width: 48px;
+    font-size: 32px;
+  }
+}
+
+.flipbook-wrapper:fullscreen {
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: none;
+  max-height: none;
+}
+
+.flipbook-wrapper:fullscreen #flipbook {
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+.stf__item img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* BOTONES ZOOM */
+.btn-pantalla-completa,
+.btn-zoom {
+  position: absolute;
+  right: 14px;
+  z-index: 9999;
+
+  width: 36px;
+  height: 36px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(6, 20, 58, 0.45);
+  color: rgba(255, 255, 255, 0.95);
+
+  font-size: 22px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.2s ease;
+}
+
+.btn-pantalla-completa {
+  top: 14px;
+}
+
+#btnZoomIn {
+  top: 58px;
+}
+
+#btnZoomOut {
+  top: 102px;
+}
+
+.btn-pantalla-completa:hover,
+.btn-zoom:hover {
+  background: rgba(6, 20, 58, 0.75);
+  color: #ffffff;
+}

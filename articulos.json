@@ -41,5 +41,16 @@
     "imagen": "img/imagen-6.jpg",
     "link": "#",
     "destacada": false
-  }
+  },
+
+  {
+  "titulo": "Edición Cero",
+  "descripcion": "La edición cero del Conversador",
+  "imagen": "ediciones/edicion-1/0.jpg",
+  "link": "edicion.html?id=edicion-1",
+  "destacada": false,
+  "categoria": "ediciones-completas"
+}
+
 ]
+

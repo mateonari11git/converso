@@ -34,6 +34,12 @@ if (typeof cargarCategoria === "function") {
   cargarCategoria();
 }
 
+if (typeof cargarEdicion === "function") {
+  cargarEdicion();
+}
+
+
+
 
 document.addEventListener("DOMContentLoaded", cargarComponentes);
 

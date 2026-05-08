@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edición | Converso</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <div data-include="componentes/navbar.html"></div>
+
+  <main class="pagina-edicion">
+    <header class="edicion-header">
+      <h1 id="edicionTitulo">Edición</h1>
+      <p id="edicionDescripcion">Revista completa en formato flipbook.</p>
+    </header>
+
+    <section class="flipbook-zona">
+        <div class="flipbook-wrapper" id="flipbookWrapper">
+            <button class="flecha-flip flecha-flip-izquierda" id="btnPaginaAnterior">&#10094;</button>
+
+            <div id="flipbook"></div>
+
+            <button class="flecha-flip flecha-flip-derecha" id="btnPaginaSiguiente">&#10095;</button>
+
+            <button id="btnPantallaCompleta" class="btn-pantalla-completa" aria-label="Pantalla completa">
+            ⛶
+            </button>
+            
+            <button id="btnZoomIn" class="btn-zoom" aria-label="Acercar">
+            +
+            </button>
+
+            <button id="btnZoomOut" class="btn-zoom btn-zoom-out" aria-label="Alejar">
+            −
+            </button>
+        </div>
+
+        <span id="contadorPaginas" class="contador-flipbook">Página 1</span>
+        
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
+  <script src="script.js"></script>
+  <script src="include.js"></script>
+</body>
+</html>

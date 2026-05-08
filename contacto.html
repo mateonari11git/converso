@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Converso</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <div data-include="componentes/navbar.html"></div>
+
+  <main class="pagina-contacto">
+    <section class="contacto-contenedor">
+
+      <div class="contacto-formulario">
+        <h1>Contáctanos</h1>
+        <p>Escríbenos y nos pondremos en contacto contigo.</p>
+
+        <form id="formularioContacto">
+          <input type="text" id="nombre" placeholder="Nombre" required>
+          <input type="email" id="correo" placeholder="Correo" required>
+          <input type="tel" id="telefono" placeholder="Teléfono">
+          <textarea id="comentario" placeholder="Comentario" rows="6" required></textarea>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+
+      <div class="contacto-imagen">
+        <img src="imagenes/CONTACTO IMAGEN.jpeg" alt="Contacto Converso">
+      </div>
+
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="include.js"></script>
+</body>
+</html>

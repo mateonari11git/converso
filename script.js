@@ -211,3 +211,160 @@ function cargarCategoria() {
       console.error("Error cargando la categoría:", error);
     });
 }
+
+function iniciarFormularioContacto() {
+  const formulario = document.getElementById("formularioContacto");
+
+  if (!formulario) return;
+
+  formulario.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const nombre = document.getElementById("nombre").value;
+    const correo = document.getElementById("correo").value;
+    const telefono = document.getElementById("telefono").value;
+    const comentario = document.getElementById("comentario").value;
+
+    const numeroWhatsApp = "573175004066";
+
+    const mensaje = `Hola, soy ${nombre}.%0A%0ACorreo: ${correo}%0ATeléfono: ${telefono}%0A%0AComentario:%0A${comentario}`;
+
+    const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
+
+    window.open(url, "_blank");
+  });
+}
+
+function cargarEdicion() {
+  const flipbookElemento = document.getElementById("flipbook");
+
+  if (!flipbookElemento) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const edicionId = params.get("id");
+
+  if (!edicionId) return;
+
+  fetch("ediciones.json")
+    .then(res => res.json())
+    .then(ediciones => {
+      const edicion = ediciones.find(item => item.id === edicionId);
+
+      if (!edicion) {
+        document.getElementById("edicionTitulo").textContent = "Edición no encontrada";
+        document.getElementById("edicionDescripcion").textContent = "La edición solicitada no existe.";
+        return;
+      }
+
+      document.getElementById("edicionTitulo").textContent = edicion.titulo;
+      document.getElementById("edicionDescripcion").textContent = edicion.descripcion;
+
+      const pageFlip = new St.PageFlip(flipbookElemento, {
+        width: 1000,
+        height: 1414,
+
+        size: "fixed",
+
+        minWidth: 1000,
+        maxWidth: 1000,
+
+        minHeight: 1414,
+        maxHeight: 1414,
+
+        autoSize: false,
+
+        showCover: true,
+        usePortrait: false,
+
+        drawShadow: true,
+        maxShadowOpacity: 0.25,
+
+        mobileScrollSupport: false,
+        clickEventForward: true
+      });
+
+      pageFlip.loadFromImages(edicion.paginas);
+
+      let zoomManual = 1;
+
+        function ajustarFlipbook() {
+        const wrapper = document.getElementById("flipbookWrapper");
+
+        if (!wrapper) return;
+
+        const anchoBase = 2000;
+        const altoBase = 1414;
+
+        const escalaBase = Math.min(
+            wrapper.clientWidth / anchoBase,
+            wrapper.clientHeight / altoBase
+        );
+
+        const escalaFinal = escalaBase * zoomManual;
+
+        flipbookElemento.style.transform = `scale(${escalaFinal})`;
+        }
+
+      setTimeout(ajustarFlipbook, 200);
+      window.addEventListener("resize", ajustarFlipbook);
+
+      document.addEventListener("fullscreenchange", () => {
+        setTimeout(ajustarFlipbook, 200);
+      });
+
+      const btnZoomIn = document.getElementById("btnZoomIn");
+        const btnZoomOut = document.getElementById("btnZoomOut");
+
+        btnZoomIn.addEventListener("click", () => {
+        zoomManual += 0.1;
+
+        if (zoomManual > 2.5) {
+            zoomManual = 2.5;
+        }
+
+        ajustarFlipbook();
+        });
+
+        btnZoomOut.addEventListener("click", () => {
+        zoomManual -= 0.1;
+
+        if (zoomManual < 0.5) {
+            zoomManual = 0.5;
+        }
+
+        ajustarFlipbook();
+        });
+
+      const contador = document.getElementById("contadorPaginas");
+
+      function actualizarContador() {
+        const paginaActual = pageFlip.getCurrentPageIndex() + 1;
+        contador.textContent = `Página ${paginaActual} de ${edicion.paginas.length}`;
+      }
+
+      pageFlip.on("flip", actualizarContador);
+      actualizarContador();
+
+      document.getElementById("btnPaginaAnterior").addEventListener("click", () => {
+        pageFlip.flipPrev();
+      });
+
+      document.getElementById("btnPaginaSiguiente").addEventListener("click", () => {
+        pageFlip.flipNext();
+      });
+
+      const btnPantallaCompleta = document.getElementById("btnPantallaCompleta");
+      const wrapper = document.getElementById("flipbookWrapper");
+
+      btnPantallaCompleta.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          wrapper.requestFullscreen();
+        } else {
+          document.exitFullscreen();
+        }
+      });
+    })
+    .catch(error => {
+      console.error("Error cargando edición:", error);
+    });
+}
