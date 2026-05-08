@@ -368,3 +368,257 @@ function cargarEdicion() {
       console.error("Error cargando edición:", error);
     });
 }
+
+function iniciarEventos() {
+  const calendarioGrid = document.getElementById("calendarioGrid");
+  const eventosPanel = document.getElementById("eventosPanel");
+  const mesActual = document.getElementById("mesActual");
+
+  if (!calendarioGrid || !eventosPanel) return;
+
+  const fechaActual = new Date();
+  let mes = fechaActual.getMonth();
+  let anio = fechaActual.getFullYear();
+
+  fetch("eventos.json")
+    .then(res => res.json())
+    .then(eventos => {
+
+      function renderCalendario() {
+        calendarioGrid.innerHTML = "";
+
+        const primerDia = new Date(anio, mes, 1);
+        const ultimoDia = new Date(anio, mes + 1, 0);
+
+        const nombresMeses = [
+          "Enero", "Febrero", "Marzo", "Abril",
+          "Mayo", "Junio", "Julio", "Agosto",
+          "Septiembre", "Octubre", "Noviembre", "Diciembre"
+        ];
+
+        mesActual.textContent = `${nombresMeses[mes]} ${anio}`;
+
+        let inicio = primerDia.getDay();
+        if (inicio === 0) inicio = 7;
+
+        for (let i = 1; i < inicio; i++) {
+          const vacio = document.createElement("div");
+          calendarioGrid.appendChild(vacio);
+        }
+
+        for (let dia = 1; dia <= ultimoDia.getDate(); dia++) {
+
+          const fechaTexto =
+            `${anio}-${String(mes + 1).padStart(2, "0")}-${String(dia).padStart(2, "0")}`;
+
+          const divDia = document.createElement("div");
+          divDia.className = "dia";
+          divDia.textContent = dia;
+
+          const eventoDelDia = eventos.find(e => e.fecha === fechaTexto);
+
+          if (eventoDelDia) {
+            divDia.classList.add("evento");
+
+            divDia.addEventListener("click", () => {
+              abrirEvento(eventoDelDia.id);
+
+              document.querySelectorAll(".dia").forEach(d => {
+                d.classList.remove("activo");
+              });
+
+              divDia.classList.add("activo");
+            });
+          }
+
+          calendarioGrid.appendChild(divDia);
+        }
+      }
+
+      function renderEventos() {
+        eventosPanel.innerHTML = "";
+
+        eventos.forEach(evento => {
+
+          const card = document.createElement("div");
+          card.className = "evento-card";
+          card.dataset.id = evento.id;
+
+          card.innerHTML = `
+            <div class="evento-titulo">
+              <div class="evento-info">
+                <h3>${evento.titulo}</h3>
+                <span>${evento.fecha} — ${evento.hora}</span>
+              </div>
+            </div>
+
+            <div class="evento-descripcion">
+              <p>${evento.descripcion}</p>
+            </div>
+          `;
+
+          card.querySelector(".evento-titulo").addEventListener("click", () => {
+            abrirEvento(evento.id);
+          });
+
+          eventosPanel.appendChild(card);
+        });
+      }
+
+      function abrirEvento(id) {
+
+        document.querySelectorAll(".evento-card").forEach(card => {
+          card.classList.remove("activo");
+        });
+
+        const cardActiva = document.querySelector(`.evento-card[data-id="${id}"]`);
+
+        if (cardActiva) {
+          cardActiva.classList.add("activo");
+
+          cardActiva.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+          });
+        }
+
+        const evento = eventos.find(e => e.id === id);
+
+        if (!evento) return;
+
+        document.querySelectorAll(".dia").forEach(d => {
+          d.classList.remove("activo");
+
+          if (d.textContent == parseInt(evento.fecha.split("-")[2])) {
+            d.classList.add("activo");
+          }
+        });
+      }
+
+      renderCalendario();
+      renderEventos();
+
+      document.getElementById("mesAnterior").addEventListener("click", () => {
+        mes--;
+
+        if (mes < 0) {
+          mes = 11;
+          anio--;
+        }
+
+        renderCalendario();
+      });
+
+      document.getElementById("mesSiguiente").addEventListener("click", () => {
+        mes++;
+
+        if (mes > 11) {
+          mes = 0;
+          anio++;
+        }
+
+        renderCalendario();
+      });
+    });
+}
+
+function cargarEventosHome() {
+  const contenedor = document.getElementById("eventosHomeLista");
+
+  if (!contenedor) return;
+
+  fetch("eventos.json")
+    .then(res => res.json())
+    .then(eventos => {
+      contenedor.innerHTML = "";
+
+      if (!eventos || eventos.length === 0) {
+        contenedor.innerHTML = "<p>No hay eventos programados por ahora.</p>";
+        return;
+      }
+
+      eventos.forEach(evento => {
+        const card = document.createElement("div");
+        card.className = "evento-home-card";
+
+        card.innerHTML = `
+          <div class="evento-home-titulo">
+            <div class="evento-home-info">
+              <h3>${evento.titulo}</h3>
+              <span>${evento.fecha} — ${evento.hora}</span>
+            </div>
+            <div class="evento-home-icono">+</div>
+          </div>
+
+          <div class="evento-home-descripcion">
+            <p>${evento.descripcion}</p>
+          </div>
+        `;
+
+        card.querySelector(".evento-home-titulo").addEventListener("click", () => {
+          card.classList.toggle("activo");
+
+          const icono = card.querySelector(".evento-home-icono");
+          icono.textContent = card.classList.contains("activo") ? "−" : "+";
+        });
+
+        contenedor.appendChild(card);
+      });
+    })
+    .catch(error => {
+      console.error("Error cargando eventos en home:", error);
+    });
+}
+
+function cargarNotasFeed() {
+  const contenedor = document.getElementById("feedNotas");
+
+  if (!contenedor) return;
+
+  fetch("notas.json")
+    .then(res => res.json())
+    .then(notas => {
+      contenedor.innerHTML = "";
+
+      notas.forEach(nota => {
+        const item = document.createElement("article");
+        item.className = "nota-feed";
+
+        let contenidoHTML = "";
+
+        if (nota.tipo === "texto") {
+          contenidoHTML = `<p>${nota.contenido}</p>`;
+        }
+
+        if (nota.tipo === "link") {
+          contenidoHTML = `
+            <p>${nota.contenido}</p>
+            <a href="${nota.url}" target="_blank" rel="noopener">Abrir enlace</a>
+          `;
+        }
+
+        if (nota.tipo === "imagen") {
+          contenidoHTML = `
+            <p>${nota.contenido}</p>
+            <img src="${nota.url}" alt="${nota.contenido}">
+          `;
+        }
+
+        item.innerHTML = `
+          <div class="nota-meta">
+            <strong>${nota.usuario}</strong>
+            <span>${nota.fecha} · ${nota.hora}</span>
+          </div>
+
+          <div class="nota-contenido">
+            ${contenidoHTML}
+          </div>
+        `;
+
+        contenedor.appendChild(item);
+      });
+    })
+    .catch(error => {
+      console.error("Error cargando notas:", error);
+    });
+}

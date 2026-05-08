@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos | Converso</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <div data-include="componentes/navbar.html"></div>
+
+  <main class="pagina-eventos">
+
+    <section class="eventos-header">
+      <h1>Eventos</h1>
+      <p>
+        Conversatorios, lanzamientos, encuentros y actividades editoriales.
+      </p>
+    </section>
+
+    <section class="eventos-layout">
+
+      <!-- CALENDARIO -->
+      <div class="calendario-panel">
+
+        <div class="calendario-header">
+          <button id="mesAnterior">&#10094;</button>
+          <h2 id="mesActual">Mes</h2>
+          <button id="mesSiguiente">&#10095;</button>
+        </div>
+
+        <div class="dias-semana">
+          <span>L</span>
+          <span>M</span>
+          <span>M</span>
+          <span>J</span>
+          <span>V</span>
+          <span>S</span>
+          <span>D</span>
+        </div>
+
+        <div class="calendario-grid" id="calendarioGrid"></div>
+      </div>
+
+      <!-- EVENTOS -->
+      <div class="eventos-panel" id="eventosPanel">
+        <!-- Eventos dinámicos -->
+      </div>
+
+    </section>
+
+  </main>
+
+  <div data-include="componentes/footer.html"></div>
+
+  <script src="script.js"></script>
+  <script src="include.js"></script>
+</body>
+</html>

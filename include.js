@@ -16,6 +16,15 @@ async function cargarComponentes() {
   if (typeof iniciarCarrusel === "function") {
     iniciarCarrusel();
   }
+
+  if (typeof cargarEventosHome === "function") {
+  cargarEventosHome();
+}
+
+if (typeof cargarNotasFeed === "function") {
+  cargarNotasFeed();
+}
+
   if (typeof iniciarNavbar === "function") {
   iniciarNavbar();
  }
@@ -38,6 +47,9 @@ if (typeof cargarEdicion === "function") {
   cargarEdicion();
 }
 
+if (typeof iniciarEventos === "function") {
+  iniciarEventos();
+}
 
 
 

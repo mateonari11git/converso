@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "fecha": "2026-05-12",
+    "hora": "7:00 PM",
+    "titulo": "Conversatorio Editorial",
+    "descripcion": "Encuentro abierto sobre narrativa contemporánea y medios digitales."
+  },
+  {
+    "id": 2,
+    "fecha": "2026-05-18",
+    "hora": "6:30 PM",
+    "titulo": "Lanzamiento Edición 2",
+    "descripcion": "Presentación oficial de la nueva edición de Converso."
+  },
+  {
+    "id": 3,
+    "fecha": "2026-05-24",
+    "hora": "5:00 PM",
+    "titulo": "Mesa de Discusión",
+    "descripcion": "Debate sobre inteligencia artificial, arte y lenguaje."
+  }
+]
