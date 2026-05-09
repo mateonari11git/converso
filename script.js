@@ -123,13 +123,13 @@ function cargarArticulo() {
       cuerpo.innerHTML = "";
 
       articulo.contenido.forEach(bloque => {
-        if (bloque.tipo === "texto") {
+        if (bloque.type === "texto") {
             const p = document.createElement("p");
             p.textContent = bloque.contenido;
             cuerpo.appendChild(p);
         }
 
-        if (bloque.tipo === "imagen") {
+        if (bloque.type === "imagen") {
             const figure = document.createElement("figure");
             figure.className = "imagen-cuerpo-articulo";
 
