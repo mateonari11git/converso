@@ -11,15 +11,12 @@ function iniciarCarrusel() {
     return;
   }
 
-  fetch("articulos.json")
-    .then(response => response.json())
-    .then(data => {
-      articulos = data.items;
-      mostrarArticulos();
-    })
-    .catch(error => {
-      console.error("Error cargando articulos.json:", error);
-    });
+fetch("contenidos.json")
+  .then(response => response.json())
+  .then(data => {
+    articulos = data.items.filter(item => item.tipo === "articulo" || item.tipo === "edicion");
+    mostrarArticulos();
+  })
 
   function mostrarArticulos() {
     carrusel.innerHTML = "";
@@ -40,7 +37,7 @@ function iniciarCarrusel() {
         <div class="card-texto">
           <h3>${articulo.titulo}</h3>
           <p>${articulo.descripcion}</p>
-          <a href="${articulo.link}" class="boton-leer">Seguir Leyendo</a>
+          <a href="${articulo.tipo === "edicion" ? `edicion.html?id=${articulo.id}` : `articulo.html?id=${articulo.id}`}" class="boton-leer">Seguir Leyendo</a>
         </div>
       `;
 
@@ -109,10 +106,10 @@ function cargarArticulo() {
 
   if (!id) return;
 
-  fetch("articulo-completo.json")
+    fetch("contenidos.json")
     .then(res => res.json())
     .then(data => {
-      const articulo = data.items.find(a => a.id === id);
+        const articulo = data.items.find(a => a.id === id && a.tipo === "articulo");
 
       if (!articulo) return;
 
@@ -125,7 +122,7 @@ function cargarArticulo() {
       const cuerpo = document.getElementById("articuloCuerpo");
       cuerpo.innerHTML = "";
 
-      articulo.cuerpo.forEach(bloque => {
+      articulo.contenido.forEach(bloque => {
         if (bloque.tipo === "texto") {
             const p = document.createElement("p");
             p.textContent = bloque.contenido;
@@ -178,12 +175,12 @@ function cargarCategoria() {
 
   if (!tituloCategoria || !descripcionCategoria || !contenedor) return;
 
-  Promise.all([
+    Promise.all([
     fetch("categorias.json").then(res => res.json()),
-    fetch("articulos.json").then(res => res.json())
-  ])
-    .then(([categorias, articulos]) => {
-        articulos = articulos.items;
+    fetch("contenidos.json").then(res => res.json())
+    ])
+    .then(([categorias, contenidos]) => {
+        const articulos = contenidos.items;
 
       const categoria = categorias.find(cat => cat.id === categoriaId);
 
@@ -216,7 +213,7 @@ function cargarCategoria() {
           <div class="card-texto">
             <h3>${articulo.titulo}</h3>
             <p>${articulo.descripcion}</p>
-            <a href="${articulo.link}" class="boton-leer">Seguir Leyendo</a>
+            <a href="${articulo.tipo === "edicion" ? `edicion.html?id=${articulo.id}` : `articulo.html?id=${articulo.id}`}" class="boton-leer">Seguir Leyendo</a>
           </div>
         `;
 
@@ -261,10 +258,10 @@ function cargarEdicion() {
 
   if (!edicionId) return;
 
-  fetch("ediciones.json")
+  fetch("contenidos.json")
     .then(res => res.json())
-    .then(ediciones => {
-      const edicion = ediciones.find(item => item.id === edicionId);
+    .then(data => {
+        const edicion = data.items.find(item => item.id === edicionId && item.tipo === "edicion");
 
       if (!edicion) {
         document.getElementById("edicionTitulo").textContent = "Edición no encontrada";

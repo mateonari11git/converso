@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "id": "herrores-de-ortografia-simon-arango",
+      "tipo": "articulo",
+      "titulo": "Herrores de Ortografía",
+      "descripcion": "Cometer errores de ortografía me avergüenza más de lo que considero razonable...",
+      "subtitulo": " ",
+      "autor": "Simón Arango",
+      "fecha": "Octubre 8, 2025",
+      "imagen": "imagenes/imagen herrores ortografia.jpg",
+      "categoria": "versiones",
+      "destacada": true,
+      "contenido": [
+        {
+          "tipo": "texto",
+          "contenido": "Cometer errores de ortografía me avergüenza más de lo que considero razonable, me amarga cometer errores así sea en un mensaje de chat escrito irreflexivamente. Para mí, procurar escribir bien es comparable a cepillarse los dientes, no colarse en una fila y comer con la boca cerrada; es cuestión de respeto. Esa es la explicación superficial, yo sé que detrás de mi molestia por los errores de ortografía hay profundas raíces inconscientes que con algo de psicoanálisis rudimentario revelan que a través de mi ortografía he intentado reflejar la intelectualidad con la cual he construido mi persona. Simplificando la palabrería, escribir bien ha sido una forma de sentirme valioso y diferente, ha sido alimento y pilar de mi ego. Pero esto no es ni un escrito confesional ni un análisis de las ficciones que he construido para alimentar la casi peligrosa dosis de asertividad de la que se ha nutrido mi personalidad; mi intención es otra. Ahora, al punto."
+        }
+      ]
+    },
+    {
+      "id": "edicion-1",
+      "tipo": "edicion",
+      "titulo": "Edición Cero",
+      "descripcion": "La edición cero del Conversador",
+      "imagen": "ediciones/edicion-1/0.jpg",
+      "categoria": "ediciones-completas",
+      "destacada": false,
+      "paginas": [
+        "ediciones/edicion-1/0.jpg",
+        "ediciones/edicion-1/1.jpg",
+        "ediciones/edicion-1/2.jpg"
+      ]
+    }
+  ]
+}

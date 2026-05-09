@@ -100,3 +100,61 @@ collections:
                       - { label: "Imagen", name: "url", widget: "image" }
 
                       - { label: "Pie de foto", name: "alt", widget: "string", required: false }
+  - name: "contenidos"
+    label: "Contenidos"
+    files:
+      - file: "contenidos.json"
+        label: "Lista de contenidos"
+        name: "contenidos"
+        fields:
+          - label: "Contenidos"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+
+              - label: "Tipo"
+                name: "tipo"
+                widget: "select"
+                options: ["articulo", "edicion"]
+
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Descripción", name: "descripcion", widget: "text" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "string", required: false }
+              - { label: "Autor", name: "autor", widget: "string", required: false }
+              - { label: "Fecha", name: "fecha", widget: "string", required: false }
+              - { label: "Imagen principal / portada", name: "imagen", widget: "image" }
+
+              - label: "Categoría"
+                name: "categoria"
+                widget: "select"
+                options: ["ediciones-completas", "versiones", "vistazos", "variedades", "vulgaridades"]
+
+              - { label: "Destacada", name: "destacada", widget: "boolean", default: false }
+
+              - label: "Contenido del artículo"
+                name: "contenido"
+                widget: "list"
+                required: false
+                types:
+                  - label: "Texto"
+                    name: "texto"
+                    widget: "object"
+                    fields:
+                      - { label: "Contenido", name: "contenido", widget: "text" }
+
+                  - label: "Imagen"
+                    name: "imagen"
+                    widget: "object"
+                    fields:
+                      - { label: "Imagen", name: "url", widget: "image" }
+                      - { label: "Pie de foto", name: "alt", widget: "string", required: false }
+
+              - label: "Páginas de edición completa"
+                name: "paginas"
+                widget: "list"
+                required: false
+                field:
+                  label: "Página"
+                  name: "pagina"
+                  widget: "image"
