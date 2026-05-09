@@ -580,8 +580,10 @@ function cargarNotasFeed() {
 
   fetch("notas.json")
     .then(res => res.json())
-    .then(notas => {
-      contenedor.innerHTML = "";
+    .then(data => {
+        const notas = data.items;
+      
+        contenedor.innerHTML = "";
 
       notas.forEach(nota => {
         const item = document.createElement("article");

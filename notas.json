@@ -1,25 +1,27 @@
-[
-  {
-    "usuario": "Converso",
-    "fecha": "2026-05-08",
-    "hora": "10:30 AM",
-    "tipo": "texto",
-    "contenido": "Bienvenidos al feed diario de Converso."
-  },
-  {
-    "usuario": "Editor",
-    "fecha": "2026-05-08",
-    "hora": "11:15 AM",
-    "tipo": "link",
-    "contenido": "Video recomendado",
-    "url": "https://www.youtube.com/"
-  },
-  {
-    "usuario": "Converso",
-    "fecha": "2026-05-08",
-    "hora": "12:00 PM",
-    "tipo": "imagen",
-    "contenido": "Imagen del día",
-    "url": "imagenes/ejemplo-feed.jpg"
-  }
-]
+{
+  "items": [
+    {
+      "usuario": "Converso",
+      "fecha": "2026-05-08",
+      "hora": "10:30 AM",
+      "tipo": "texto",
+      "contenido": "Bienvenidos al feed diario de Converso."
+    },
+    {
+      "usuario": "Editor",
+      "fecha": "2026-05-08",
+      "hora": "11:15 AM",
+      "tipo": "link",
+      "contenido": "Video recomendado",
+      "url": "https://www.youtube.com/"
+    },
+    {
+      "usuario": "Converso",
+      "fecha": "2026-05-08",
+      "hora": "12:00 PM",
+      "tipo": "imagen",
+      "contenido": "Imagen del día",
+      "url": "imagenes/ejemplo-feed.jpg"
+    }
+  ]
+}
