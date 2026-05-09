@@ -23,3 +23,20 @@ collections:
               - { label: "Link", name: "link", widget: "string" }
               - { label: "Destacada", name: "destacada", widget: "boolean", default: false }
               - { label: "Categoría", name: "categoria", widget: "select", options: ["ediciones-completas", "versiones", "vistazos", "variedades", "vulgaridades"] }
+
+                - name: "eventos"
+    label: "Eventos"
+    files:
+      - file: "eventos.json"
+        label: "Lista de eventos"
+        name: "eventos"
+        fields:
+          - label: "Eventos"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "number" }
+              - { label: "Fecha", name: "fecha", widget: "string" }
+              - { label: "Hora", name: "hora", widget: "string" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Descripción", name: "descripcion", widget: "text" }

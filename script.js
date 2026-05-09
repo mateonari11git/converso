@@ -384,7 +384,8 @@ function iniciarEventos() {
 
   fetch("eventos.json")
     .then(res => res.json())
-    .then(eventos => {
+    .then(data => {
+        const eventos = data.items;
 
       function renderCalendario() {
         calendarioGrid.innerHTML = "";
