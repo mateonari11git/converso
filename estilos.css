@@ -1464,3 +1464,20 @@ body {
   display: block;
   margin-top: 10px;
 }
+
+.imagen-cuerpo-articulo {
+  margin: 36px 0;
+}
+
+.imagen-cuerpo-articulo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.imagen-cuerpo-articulo figcaption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #777;
+  text-align: center;
+}

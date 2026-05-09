@@ -112,7 +112,7 @@ function cargarArticulo() {
   fetch("articulo-completo.json")
     .then(res => res.json())
     .then(data => {
-      const articulo = data.find(a => a.id === id);
+      const articulo = data.items.find(a => a.id === id);
 
       if (!articulo) return;
 
@@ -125,11 +125,25 @@ function cargarArticulo() {
       const cuerpo = document.getElementById("articuloCuerpo");
       cuerpo.innerHTML = "";
 
-      articulo.cuerpo.forEach(parrafo => {
-        const p = document.createElement("p");
-        p.textContent = parrafo;
-        cuerpo.appendChild(p);
-      });
+      articulo.cuerpo.forEach(bloque => {
+        if (bloque.tipo === "texto") {
+            const p = document.createElement("p");
+            p.textContent = bloque.contenido;
+            cuerpo.appendChild(p);
+        }
+
+        if (bloque.tipo === "imagen") {
+            const figure = document.createElement("figure");
+            figure.className = "imagen-cuerpo-articulo";
+
+            figure.innerHTML = `
+            <img src="${bloque.url}" alt="${bloque.alt || ""}">
+            ${bloque.alt ? `<figcaption>${bloque.alt}</figcaption>` : ""}
+            `;
+
+            cuerpo.appendChild(figure);
+        }
+        });
     });
 }
 
