@@ -14,7 +14,7 @@ function iniciarCarrusel() {
   fetch("articulos.json")
     .then(response => response.json())
     .then(data => {
-      articulos = data;
+      articulos = data.items;
       mostrarArticulos();
     })
     .catch(error => {
@@ -169,6 +169,8 @@ function cargarCategoria() {
     fetch("articulos.json").then(res => res.json())
   ])
     .then(([categorias, articulos]) => {
+        articulos = articulos.items;
+
       const categoria = categorias.find(cat => cat.id === categoriaId);
 
       if (!categoria) {

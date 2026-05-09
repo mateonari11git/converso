@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "imagenes"
+public_folder: "/imagenes"
+
+collections:
+  - name: "articulos"
+    label: "Artículos del carrusel/categorías"
+    files:
+      - file: "articulos.json"
+        label: "Lista de artículos"
+        name: "articulos"
+        fields:
+          - label: "Artículos"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Descripción", name: "descripcion", widget: "text" }
+              - { label: "Imagen", name: "imagen", widget: "image" }
+              - { label: "Link", name: "link", widget: "string" }
+              - { label: "Destacada", name: "destacada", widget: "boolean", default: false }
+              - { label: "Categoría", name: "categoria", widget: "select", options: ["ediciones-completas", "versiones", "vistazos", "variedades", "vulgaridades"] }

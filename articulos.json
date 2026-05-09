@@ -1,56 +1,60 @@
-[
-  {
-    "titulo": "Herrores de Ortografía - Simón Arango",
-    "descripcion": "Cometer errores de ortografía me avergüenza más de lo que considero razonable...",
-    "imagen": "imagenes/imagen herrores ortografia.jpg",
-    "link": "articulo.html?id=herrores-de-ortografia-simon-arango",
-    "destacada": true,
-    "categoria": "versiones"
-  },
-  {
-    "titulo": "Título del artículo",
-    "descripcion": "Descripción corta del contenido de esta publicación.",
-    "imagen": "img/imagen-2.jpg",
-    "link": "#",
-    "destacada": false
-  },
-  {
-    "titulo": "Otro artículo popular",
-    "descripcion": "Una breve descripción para invitar al lector a continuar.",
-    "imagen": "img/imagen-3.jpg",
-    "link": "#",
-    "destacada": true
-  },
-  {
-    "titulo": "Crónica destacada",
-    "descripcion": "Texto corto de presentación para esta historia.",
-    "imagen": "img/imagen-4.jpg",
-    "link": "#",
-    "destacada": false
-  },
-  {
-    "titulo": "Nueva mirada cultural",
-    "descripcion": "Un vistazo breve a una nueva historia de la revista.",
-    "imagen": "img/imagen-5.jpg",
-    "link": "#",
-    "destacada": true
-  },
-  {
-    "titulo": "Nota editorial",
-    "descripcion": "Una reflexión corta sobre temas actuales.",
-    "imagen": "img/imagen-6.jpg",
-    "link": "#",
-    "destacada": false
-  },
-
-  {
-  "titulo": "Edición Cero",
-  "descripcion": "La edición cero del Conversador",
-  "imagen": "ediciones/edicion-1/0.jpg",
-  "link": "edicion.html?id=edicion-1",
-  "destacada": false,
-  "categoria": "ediciones-completas"
+{
+  "items": [
+    {
+      "titulo": "Herrores de Ortografía - Simón Arango",
+      "descripcion": "Cometer errores de ortografía me avergüenza más de lo que considero razonable...",
+      "imagen": "imagenes/imagen herrores ortografia.jpg",
+      "link": "articulo.html?id=herrores-de-ortografia-simon-arango",
+      "destacada": true,
+      "categoria": "versiones"
+    },
+    {
+      "titulo": "Título del artículo",
+      "descripcion": "Descripción corta del contenido de esta publicación.",
+      "imagen": "img/imagen-2.jpg",
+      "link": "#",
+      "destacada": false,
+      "categoria": "versiones"
+    },
+    {
+      "titulo": "Otro artículo popular",
+      "descripcion": "Una breve descripción para invitar al lector a continuar.",
+      "imagen": "img/imagen-3.jpg",
+      "link": "#",
+      "destacada": true,
+      "categoria": "vistazos"
+    },
+    {
+      "titulo": "Crónica destacada",
+      "descripcion": "Texto corto de presentación para esta historia.",
+      "imagen": "img/imagen-4.jpg",
+      "link": "#",
+      "destacada": false,
+      "categoria": "variedades"
+    },
+    {
+      "titulo": "Nueva mirada cultural",
+      "descripcion": "Un vistazo breve a una nueva historia de la revista.",
+      "imagen": "img/imagen-5.jpg",
+      "link": "#",
+      "destacada": true,
+      "categoria": "vulgaridades"
+    },
+    {
+      "titulo": "Nota editorial",
+      "descripcion": "Una reflexión corta sobre temas actuales.",
+      "imagen": "img/imagen-6.jpg",
+      "link": "#",
+      "destacada": false,
+      "categoria": "versiones"
+    },
+    {
+      "titulo": "Edición Cero",
+      "descripcion": "La edición cero del Conversador",
+      "imagen": "ediciones/edicion-1/0.jpg",
+      "link": "edicion.html?id=edicion-1",
+      "destacada": false,
+      "categoria": "ediciones-completas"
+    }
+  ]
 }
-
-]
-
