@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: mateonari11git/converso
   branch: main
 
 media_folder: "imagenes"
