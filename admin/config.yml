@@ -6,100 +6,6 @@ media_folder: "imagenes"
 public_folder: "/imagenes"
 
 collections:
-  - name: "articulos"
-    label: "Artículos del carrusel/categorías"
-    files:
-      - file: "articulos.json"
-        label: "Lista de artículos"
-        name: "articulos"
-        fields:
-          - label: "Artículos"
-            name: "items"
-            widget: "list"
-            fields:
-              - { label: "Título", name: "titulo", widget: "string" }
-              - { label: "Descripción", name: "descripcion", widget: "text" }
-              - { label: "Imagen", name: "imagen", widget: "image" }
-              - { label: "Link", name: "link", widget: "string" }
-              - { label: "Destacada", name: "destacada", widget: "boolean", default: false }
-              - { label: "Categoría", name: "categoria", widget: "select", options: ["ediciones-completas", "versiones", "vistazos", "variedades", "vulgaridades"] }
-
-  - name: "eventos"
-    label: "Eventos"
-    files:
-      - file: "eventos.json"
-        label: "Lista de eventos"
-        name: "eventos"
-        fields:
-          - label: "Eventos"
-            name: "items"
-            widget: "list"
-            fields:
-              - { label: "ID", name: "id", widget: "number" }
-              - { label: "Fecha", name: "fecha", widget: "string" }
-              - { label: "Hora", name: "hora", widget: "string" }
-              - { label: "Título", name: "titulo", widget: "string" }
-              - { label: "Descripción", name: "descripcion", widget: "text" }
-  - name: "notas"
-    label: "Notas del día"
-    files:
-      - file: "notas.json"
-        label: "Feed de notas"
-        name: "notas"
-        fields:
-          - label: "Notas"
-            name: "items"
-            widget: "list"
-            fields:
-              - { label: "Usuario", name: "usuario", widget: "string" }
-              - { label: "Fecha", name: "fecha", widget: "string" }
-              - { label: "Hora", name: "hora", widget: "string" }
-              - { label: "Tipo", name: "tipo", widget: "select", options: ["texto", "link", "imagen"] }
-              - { label: "Contenido", name: "contenido", widget: "text" }
-              - { label: "URL", name: "url", widget: "string", required: false }
-
-  - name: "articulos_completos"
-    label: "Artículos completos"
-    files:
-      - file: "articulo-completo.json"
-        label: "Contenido completo de artículos"
-        name: "articulos_completos"
-        fields:
-          - label: "Artículos completos"
-            name: "items"
-            widget: "list"
-            fields:
-
-              - { label: "ID", name: "id", widget: "string" }
-
-              - { label: "Título", name: "titulo", widget: "string" }
-
-              - { label: "Subtítulo", name: "subtitulo", widget: "string", required: false }
-
-              - { label: "Autor", name: "autor", widget: "string" }
-
-              - { label: "Fecha", name: "fecha", widget: "string" }
-
-              - { label: "Imagen principal", name: "imagen", widget: "image" }
-
-              - label: "Cuerpo"
-                name: "cuerpo"
-                widget: "list"
-                types:
-
-                  - label: "Texto"
-                    name: "texto"
-                    widget: "object"
-                    fields:
-                      - { label: "Contenido", name: "contenido", widget: "text" }
-
-                  - label: "Imagen"
-                    name: "imagen"
-                    widget: "object"
-                    fields:
-                      - { label: "Imagen", name: "url", widget: "image" }
-
-                      - { label: "Pie de foto", name: "alt", widget: "string", required: false }
   - name: "contenidos"
     label: "Contenidos"
     files:
@@ -158,3 +64,38 @@ collections:
                   label: "Página"
                   name: "pagina"
                   widget: "image"
+
+  - name: "eventos"
+    label: "Eventos"
+    files:
+      - file: "eventos.json"
+        label: "Lista de eventos"
+        name: "eventos"
+        fields:
+          - label: "Eventos"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "number" }
+              - { label: "Fecha", name: "fecha", widget: "string" }
+              - { label: "Hora", name: "hora", widget: "string" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Descripción", name: "descripcion", widget: "text" }
+
+  - name: "notas"
+    label: "Notas del día"
+    files:
+      - file: "notas.json"
+        label: "Feed de notas"
+        name: "notas"
+        fields:
+          - label: "Notas"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Usuario", name: "usuario", widget: "string" }
+              - { label: "Fecha", name: "fecha", widget: "string" }
+              - { label: "Hora", name: "hora", widget: "string" }
+              - { label: "Tipo", name: "tipo", widget: "select", options: ["texto", "link", "imagen"] }
+              - { label: "Contenido", name: "contenido", widget: "text" }
+              - { label: "URL", name: "url", widget: "string", required: false }
