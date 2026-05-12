@@ -39,14 +39,22 @@ export async function onRequest(context) {
 <html>
   <body>
     <script>
-      window.opener.postMessage(
-        'authorization:github:success:${JSON.stringify({
-          token: data.access_token,
-        })}',
-        window.location.origin
-      );
+      (function() {
+        function receiveMessage(e) {
+          window.opener.postMessage(
+            'authorization:github:success:${JSON.stringify({
+              token: data.access_token,
+            })}',
+            '*'
+          );
 
-      window.close();
+          window.close();
+        }
+
+        window.addEventListener("message", receiveMessage, false);
+
+        window.opener.postMessage("authorizing:github", "*");
+      })();
     </script>
   </body>
 </html>
