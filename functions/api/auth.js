@@ -3,6 +3,13 @@ export async function onRequest(context) {
   const url = new URL(request.url);
 
   const clientId = env.GITHUB_CLIENT_ID;
+
+  if (!clientId) {
+    return new Response("Error: GITHUB_CLIENT_ID no está configurado en Cloudflare Pages.", {
+      status: 500
+    });
+  }
+
   const redirectUri = `${url.origin}/api/callback`;
 
   const githubUrl = new URL("https://github.com/login/oauth/authorize");
