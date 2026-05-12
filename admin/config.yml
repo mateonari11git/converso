@@ -2,7 +2,10 @@ backend:
   name: github
   repo: mateonari11git/converso
   branch: main
-  
+  base_url: https://converso.pages.dev
+  auth_endpoint: api/auth
+  site_domain: converso.pages.dev
+
 media_folder: "imagenes"
 public_folder: "/imagenes"
 
