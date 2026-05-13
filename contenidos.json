@@ -7,7 +7,7 @@
       "descripcion": "La edición cero del Conversador",
       "imagen": "ediciones/edicion-0/0.jpg",
       "categoria": "ediciones-completas",
-      "destacada": true,
+      "destacada": false,
       "paginas": [
       "ediciones/edicion-0/0.jpg",
       "ediciones/edicion-0/1.jpg",
@@ -134,7 +134,7 @@
       ],
       "subtitulo": " ",
       "titulo": "Herrores de Ortografía",
-      "destacada": true,
+      "destacada": false,
       "id": "herrores-de-ortografia-simon-arango",
       "fecha": "Octubre 8, 2025"
     }
