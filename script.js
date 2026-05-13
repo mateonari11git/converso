@@ -616,15 +616,18 @@ function cargarNotasFeed() {
         }
 
         if (nota.tipo === "imagen") {
+          const rutaImagen = nota.imagen.startsWith("/")
+            ? nota.imagen
+            : `/${nota.imagen}`;
 
           let imagenHTML = `
-            <img src="${nota.imagen}" alt="${nota.contenido}">
+            <img src="${rutaImagen}" alt="${nota.contenido}">
           `;
 
           if (nota.url) {
             imagenHTML = `
               <a href="${nota.url}" target="_blank" rel="noopener">
-                <img src="${nota.imagen}" alt="${nota.contenido}">
+                <img src="${rutaImagen}" alt="${nota.contenido}">
               </a>
             `;
           }
