@@ -102,6 +102,22 @@ collections:
               - { label: "Usuario", name: "usuario", widget: "string" }
               - { label: "Fecha", name: "fecha", widget: "string" }
               - { label: "Hora", name: "hora", widget: "string" }
-              - { label: "Tipo", name: "tipo", widget: "select", options: ["texto", "link", "imagen"] }
-              - { label: "Contenido", name: "contenido", widget: "text" }
-              - { label: "URL", name: "url", widget: "string", required: false }
+
+              - label: "Tipo"
+                name: "tipo"
+                widget: "select"
+                options: ["texto", "link", "imagen"]
+
+              - label: "Texto / descripción"
+                name: "contenido"
+                widget: "text"
+
+              - label: "Imagen"
+                name: "imagen"
+                widget: "image"
+                required: false
+
+              - label: "Enlace opcional"
+                name: "url"
+                widget: "string"
+                required: false

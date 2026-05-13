@@ -616,9 +616,22 @@ function cargarNotasFeed() {
         }
 
         if (nota.tipo === "imagen") {
+
+          let imagenHTML = `
+            <img src="${nota.imagen}" alt="${nota.contenido}">
+          `;
+
+          if (nota.url) {
+            imagenHTML = `
+              <a href="${nota.url}" target="_blank" rel="noopener">
+                <img src="${nota.imagen}" alt="${nota.contenido}">
+              </a>
+            `;
+          }
+
           contenidoHTML = `
             <p>${nota.contenido}</p>
-            <img src="${nota.url}" alt="${nota.contenido}">
+            ${imagenHTML}
           `;
         }
 
