@@ -5,6 +5,9 @@ backend:
   base_url: https://decap-converso.mateonari11.workers.dev
   auth_endpoint: auth
 
+site_domain: elconversador.com.co
+display_url: https://elconversador.com.co
+
 media_folder: "imagenes"
 public_folder: "/imagenes"
 
