@@ -1,11 +1,11 @@
 {
   "items": [
     {
-      "usuario": "Converso",
-      "fecha": "2026-05-08",
-      "hora": "10:30 AM",
-      "tipo": "texto",
-      "contenido": "Bienvenidos al feed diario de Converso."
+      "usuario": "Mateo Navarro",
+      "fecha": "2026-05-13",
+      "hora": "12:00 PM",
+      "tipo": "imagen",
+      "contenido": "Imagen"
     },
     {
       "usuario": "Editor",
@@ -17,11 +17,11 @@
     },
     {
       "usuario": "Converso",
-      "fecha": "2026-05-08",
-      "hora": "12:00 PM",
-      "tipo": "imagen",
-      "contenido": "Imagen del día",
-      "url": "imagenes/ejemplo-feed.jpg"
+      "fecha": "2026-05-13",
+      "hora": "10:50 AM",
+      "tipo": "texto",
+      "contenido": "Bienvenidos a las notas diarias de Converso. Pequeños fragmentos de ideas, textos, musica y videos que los miembros han decidido compartir para su curiosidad.",
+      "url": ""
     }
   ]
 }
