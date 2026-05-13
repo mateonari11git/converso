@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "id": "edicion-0",
-      "tipo": "edicion",
-      "titulo": "Edición Cero",
-      "descripcion": "La edición cero del Conversador",
-      "imagen": "ediciones/edicion-0/0.jpg",
-      "categoria": "ediciones-completas",
-      "destacada": false,
-      "paginas": [
-      "ediciones/edicion-0/0.jpg",
-      "ediciones/edicion-0/1.jpg",
-      "ediciones/edicion-0/2.jpg",
-      "ediciones/edicion-0/3.jpg",
-      "ediciones/edicion-0/4.jpg",
-      "ediciones/edicion-0/5.jpg",
-      "ediciones/edicion-0/6.jpg",
-      "ediciones/edicion-0/7.jpg",
-      "ediciones/edicion-0/8.jpg",
-      "ediciones/edicion-0/9.jpg",
-      "ediciones/edicion-0/10.jpg",
-      "ediciones/edicion-0/11.jpg",
-      "ediciones/edicion-0/12.jpg",
-      "ediciones/edicion-0/13.jpg",
-      "ediciones/edicion-0/14.jpg",
-      "ediciones/edicion-0/15.jpg",
-      "ediciones/edicion-0/16.jpg",
-      "ediciones/edicion-0/17.jpg",
-      "ediciones/edicion-0/18.jpg",
-      "ediciones/edicion-0/19.jpg",
-      "ediciones/edicion-0/20.jpg",
-      "ediciones/edicion-0/21.jpg",
-      "ediciones/edicion-0/22.jpg",
-      "ediciones/edicion-0/23.jpg",
-      "ediciones/edicion-0/24.jpg",
-      "ediciones/edicion-0/25.jpg",
-      "ediciones/edicion-0/26.jpg",
-      "ediciones/edicion-0/27.jpg"
-      ]
-    },
-    {
       "id": "edicion-1",
       "tipo": "edicion",
       "titulo": "Primera Edición",
@@ -47,7 +8,6 @@
       "imagen": "ediciones/edicion-1/0.jpg",
       "categoria": "ediciones-completas",
       "destacada": true,
-
       "paginas": [
         "ediciones/edicion-1/0.jpg",
         "ediciones/edicion-1/1.jpg",
@@ -96,7 +56,46 @@
         "ediciones/edicion-1/44.jpg",
         "ediciones/edicion-1/45.jpg",
         "ediciones/edicion-1/46.jpg",
-        "ediciones/edicion-1/47.jpg"        
+        "ediciones/edicion-1/47.jpg"
+      ]
+    },
+    {
+      "id": "edicion-0",
+      "tipo": "edicion",
+      "titulo": "Edición Cero",
+      "descripcion": "La edición cero del Conversador",
+      "imagen": "ediciones/edicion-0/0.jpg",
+      "categoria": "ediciones-completas",
+      "destacada": false,
+      "paginas": [
+        "ediciones/edicion-0/0.jpg",
+        "ediciones/edicion-0/1.jpg",
+        "ediciones/edicion-0/2.jpg",
+        "ediciones/edicion-0/3.jpg",
+        "ediciones/edicion-0/4.jpg",
+        "ediciones/edicion-0/5.jpg",
+        "ediciones/edicion-0/6.jpg",
+        "ediciones/edicion-0/7.jpg",
+        "ediciones/edicion-0/8.jpg",
+        "ediciones/edicion-0/9.jpg",
+        "ediciones/edicion-0/10.jpg",
+        "ediciones/edicion-0/11.jpg",
+        "ediciones/edicion-0/12.jpg",
+        "ediciones/edicion-0/13.jpg",
+        "ediciones/edicion-0/14.jpg",
+        "ediciones/edicion-0/15.jpg",
+        "ediciones/edicion-0/16.jpg",
+        "ediciones/edicion-0/17.jpg",
+        "ediciones/edicion-0/18.jpg",
+        "ediciones/edicion-0/19.jpg",
+        "ediciones/edicion-0/20.jpg",
+        "ediciones/edicion-0/21.jpg",
+        "ediciones/edicion-0/22.jpg",
+        "ediciones/edicion-0/23.jpg",
+        "ediciones/edicion-0/24.jpg",
+        "ediciones/edicion-0/25.jpg",
+        "ediciones/edicion-0/26.jpg",
+        "ediciones/edicion-0/27.jpg"
       ]
     },
     {
