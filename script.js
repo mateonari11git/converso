@@ -543,7 +543,9 @@ function cargarEventosHome() {
 
   fetch("eventos.json")
     .then(res => res.json())
-    .then(eventos => {
+    .then(data => {
+      const eventos = data.items;
+
       contenedor.innerHTML = "";
 
       if (!eventos || eventos.length === 0) {

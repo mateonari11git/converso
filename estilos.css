@@ -687,7 +687,6 @@ body {
   padding: 60px 40px;
 }
 
-/* HERO */
 .nosotros-hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -709,10 +708,22 @@ body {
   text-align: justify;
 }
 
+.nosotros-imagen {
+  height: 100%;
+}
+
+.nosotros-imagen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .nosotros-imagen img {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
+  max-height: 320px;
   height: auto;
-  object-fit: cover;
+  display: block;
 }
 
 /* EQUIPO */
