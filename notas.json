@@ -5,15 +5,8 @@
       "fecha": "2026-05-13",
       "hora": "12:00 PM",
       "tipo": "imagen",
-      "contenido": "Imagen"
-    },
-    {
-      "usuario": "Editor",
-      "fecha": "2026-05-08",
-      "hora": "11:15 AM",
-      "tipo": "link",
-      "contenido": "Video recomendado",
-      "url": "https://www.youtube.com/"
+      "contenido": "Vestigios del Ferrocaril de Hiyaz, saboteado por Lawrence de Arabia durante la primera guerra mundial.",
+      "imagen": "/imagenes/tren-lawrence-de-arabia.jpeg"
     },
     {
       "usuario": "Converso",
