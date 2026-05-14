@@ -947,6 +947,8 @@ body {
   justify-content: center;
 
   overflow: auto;
+  touch-action: pan-x pan-y;
+  -webkit-overflow-scrolling: touch;
   background: #f3f3f3;
 }
 
@@ -1054,11 +1056,20 @@ body {
   height: 100vh !important;
 }
 
+.stf__item,
+.stf__item img,
+.stf__block,
+.stf__wrapper {
+  touch-action: pan-x pan-y !important;
+}
+
 .stf__item img {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
   backface-visibility: hidden;
   transform: translateZ(0);
+
+  pointer-events: none;
 }
 
 /* BOTONES ZOOM */

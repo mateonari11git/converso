@@ -292,11 +292,50 @@ function cargarEdicion() {
         drawShadow: true,
         maxShadowOpacity: 0.25,
 
-        mobileScrollSupport: false,
-        clickEventForward: true
+        mobileScrollSupport: true,
+        useMouseEvents: false,
+        swipeDistance: 999999,
+        disableFlipByClick: true,
+        clickEventForward: false
       });
 
       pageFlip.loadFromImages(edicion.paginas);
+
+      // Permitir desplazamiento manual sobre el contenido del flipbook en móvil
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let scrollStartLeft = 0;
+      let scrollStartTop = 0;
+
+      flipbookElemento.addEventListener("touchstart", function(event) {
+        if (event.touches.length !== 1) return;
+
+        const wrapperPan = document.getElementById("flipbookWrapper");
+
+        touchStartX = event.touches[0].clientX;
+        touchStartY = event.touches[0].clientY;
+
+        scrollStartLeft = wrapperPan.scrollLeft;
+        scrollStartTop = wrapperPan.scrollTop;
+      }, { passive: true, capture: true });
+
+      flipbookElemento.addEventListener("touchmove", function(event) {
+        if (event.touches.length !== 1) return;
+
+        const wrapperPan = document.getElementById("flipbookWrapper");
+
+        const touchX = event.touches[0].clientX;
+        const touchY = event.touches[0].clientY;
+
+        const deltaX = touchStartX - touchX;
+        const deltaY = touchStartY - touchY;
+
+        wrapperPan.scrollLeft = scrollStartLeft + deltaX;
+        wrapperPan.scrollTop = scrollStartTop + deltaY;
+
+        event.preventDefault();
+        event.stopPropagation();
+      }, { passive: false, capture: true });
 
       let zoomManual = 1;
 
