@@ -355,7 +355,16 @@ function cargarEdicion() {
 
         const escalaFinal = escalaBase * zoomManual;
 
+        const canvas = document.getElementById("flipbookCanvas");
+
         flipbookElemento.style.transform = `scale(${escalaFinal})`;
+        flipbookElemento.style.transformOrigin = "top left";
+
+        if (canvas) {
+          canvas.style.width = `${anchoBase * escalaFinal}px`;
+          canvas.style.height = `${altoBase * escalaFinal}px`;
+        }
+
         }
 
       setTimeout(ajustarFlipbook, 200);

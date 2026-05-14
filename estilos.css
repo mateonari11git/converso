@@ -942,21 +942,32 @@ body {
   width: 100%;
   height: calc(100vh - 160px);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   overflow: auto;
   touch-action: pan-x pan-y;
   -webkit-overflow-scrolling: touch;
   background: #f3f3f3;
 }
 
+.flipbook-canvas {
+  position: relative;
+
+  width: fit-content;
+  height: fit-content;
+
+  margin: 0 auto;
+}
+
 #flipbook {
+  position: absolute;
+  top: 0;
+  left: 0;
+
   width: 1000px;
   height: 1414px;
+
   image-rendering: auto;
-  transform-origin: center center;
+
+  transform-origin: top left;
 }
 
 .flipbook-controles {
