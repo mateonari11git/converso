@@ -53,7 +53,9 @@ collections:
                     name: "texto"
                     widget: "object"
                     fields:
-                      - { label: "Contenido", name: "contenido", widget: "text" }
+                      - label: "Contenido"
+                        name: "contenido"
+                        widget: "markdown"
 
                   - label: "Imagen"
                     name: "imagen"

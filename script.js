@@ -125,7 +125,7 @@ function cargarArticulo() {
       articulo.contenido.forEach(bloque => {
         if (bloque.type === "texto") {
             const p = document.createElement("p");
-            p.textContent = bloque.contenido;
+            p.innerHTML = marked.parse(bloque.contenido);
             cuerpo.appendChild(p);
         }
 
