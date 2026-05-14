@@ -9,7 +9,7 @@ site_domain: elconversador.com.co
 display_url: https://elconversador.com.co
 
 media_folder: "imagenes"
-public_folder: "/imagenes"
+public_folder: "imagenes"
 
 collections:
   - name: "contenidos"
