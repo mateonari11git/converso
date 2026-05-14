@@ -136,6 +136,67 @@
       "destacada": false,
       "id": "herrores-de-ortografia-simon-arango",
       "fecha": "Octubre 8, 2025"
+    },
+    {
+      "autor": "Mateo Navarro",
+      "descripcion": "Y automáticamente, alguien dice en escena, el día que todo se pierda, ese día escucharemos esta canción...",
+      "categoria": "variedades",
+      "imagen": "/imagenes/house-of-the-rising-sun.png",
+      "tipo": "articulo",
+      "contenido": [
+        {
+          "type": "texto",
+          "contenido": "There is a house in New Orleans\nThey call the Rising Sun.\n"
+        },
+        {
+          "type": "texto",
+          "contenido": "Y automáticamente, alguien dice en escena, el día que todo se pierda, ese día escucharemos esta canción. No es raro, es de larga data el misterio ocultado por su melodía. Desde mediados del siglo XIX y tal vez mucho antes, en las montañas y llanuras de norteamérica se murmuraba su recuerdo."
+        },
+        {
+          "type": "texto",
+          "contenido": "It's been the ruin of many a poor boy\nAnd I, Oh God, are one\n"
+        },
+        {
+          "type": "texto",
+          "contenido": "La ubicación precisa como la naturaleza de las actividades que en ella tenían lugar nunca ha sido del todo determinado. Algunos dicen que un burdel, otros que una cárcel, algunos pocos que un casino. Todos coinciden en algo, en la gravedad propia que tiene la perdición."
+        },
+        {
+          "type": "texto",
+          "contenido": "My mother was a tailor\nShe sewed this new blue jeans\nMy father was a gamblin’ man\nDown in New Orleans\n"
+        },
+        {
+          "type": "texto",
+          "contenido": "Hoy es fácil escucharla e imaginarse a uno como alguien entonces, errante y pendenciero, con el arrepentimiento a cuestas y la voluntad de no querer cambiar. En la versión femenina de la canción, es una mujer que lo pierde todo por prendarse de un hombre así, en la versión masculina, es un hombre igual, que nació de un borracho y apostador.\n"
+        },
+        {
+          "type": "texto",
+          "contenido": "And the only thing a gambler needs\nIt’s a suitcase and a trunk\nAnd the only time he’s satisfied\nIs when he’s a drunk"
+        },
+        {
+          "type": "texto",
+          "contenido": "También nos recuerda que lo único que hace falta para vivir es un baul y una maleta donde guardar el pecado. Ese no se puede abandonar porque lo llevamos impreso como el instinto, por debajo de la piel. Algunos no lo pueden dejar y al final van a parar a la House of the Rising Sun."
+        },
+        {
+          "type": "texto",
+          "contenido": "Oh mother, tell your children\nNot to do what I have done\nTo spend your lives in sin and misery\nIn the house of the rising sun."
+        },
+        {
+          "type": "texto",
+          "contenido": "***"
+        },
+        {
+          "type": "texto",
+          "contenido": "Si quiere revivir esa breve muestra del sentir americano (norteamerica) puede escuchar también cualquiera de las siguientes versiones:"
+        },
+        {
+          "type": "texto",
+          "contenido": "1. The Animals\n2. Nina Simone Live (lenta y pesarosa)\n3. Nina Simone (versión rapida)\n4. Joan Baez\n5. David Bowie\n"
+        }
+      ],
+      "titulo": "House of The Rising Sun",
+      "destacada": false,
+      "id": "House-of-the-Rising-Sun",
+      "fecha": "14/05/2026"
     }
   ]
 }
