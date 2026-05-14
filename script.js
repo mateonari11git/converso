@@ -302,6 +302,7 @@ function cargarEdicion() {
 
         function ajustarFlipbook() {
         const wrapper = document.getElementById("flipbookWrapper");
+        const shell = document.getElementById("flipbookShell");
 
         if (!wrapper) return;
 
@@ -371,7 +372,7 @@ function cargarEdicion() {
 
       btnPantallaCompleta.addEventListener("click", () => {
         if (!document.fullscreenElement) {
-          wrapper.requestFullscreen();
+          shell.requestFullscreen();
         } else {
           document.exitFullscreen();
         }

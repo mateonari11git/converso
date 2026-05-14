@@ -931,6 +931,12 @@ body {
 }
 
 /* Contenedor principal */
+
+.flipbook-shell {
+  position: relative;
+  width: 100%;
+}
+
 .flipbook-wrapper {
   position: relative;
   width: 100%;
@@ -949,6 +955,17 @@ body {
   height: 1414px;
   image-rendering: auto;
   transform-origin: center center;
+}
+
+.flipbook-controles {
+  position: absolute;
+  inset: 0;
+  z-index: 99999;
+  pointer-events: none;
+}
+
+.flipbook-controles button {
+  pointer-events: auto;
 }
 
 /* Flechas transparentes encima del libro */
@@ -1018,9 +1035,10 @@ body {
     margin-right: 0;
   }
 
-    .flecha-flip {
-    width: 48px;
-    font-size: 32px;
+  .flecha-flip {
+      width: 38px;
+      height: 38px;
+      font-size: 22px;
   }
 }
 
